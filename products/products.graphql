@@ -1,0 +1,21 @@
+type Query {
+  products: [Product]
+  productsByPrice(min: Float: Float!, max: Float!): [Product]
+}
+
+type Mutation {
+  addNewProduct(id: ID!, description: String!, price: Float!): Product
+}
+
+type Product {
+  id: ID!
+  description: String!
+  reviews: [Review]
+  price: Float!
+}
+
+type Review {
+  rating: Int!
+  comment: String
+}
+//Exclamation mark means that it is required
